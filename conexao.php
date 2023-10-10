@@ -19,7 +19,11 @@ $db = 'stopots';
 $usuario = 'root';
 $senha = '';
 
+try{
 $conexao = mysqli_connect($host,$usuario,$senha);
-
+echo 'Conexão bem sucedida.';
+}catch (Exception $e){
+    die('Não foi possível conectar ao banco de dados. Erro: ' . $e);
+}
 mysqli_select_db($conexao,$db);
 ?>
